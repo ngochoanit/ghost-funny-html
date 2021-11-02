@@ -1,0 +1,89 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding         : 20px;
+    background-color: #191a2e
+}
+
+.ghost {
+    width           : 100px;
+    height          : 120px;
+    background-color: white;
+    border-radius   : 100rem 100rem 0 0;
+    position        : relative;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    animation       : ghost 3s cubic-bezier(0.39, 0.575, 0.565, 1) infinite
+}
+
+.ghost::after {
+    content         : "";
+    width           : 20px;
+    height          : 20px;
+    background-color: red;
+    position        : absolute;
+    left            : -10px;
+    border-radius   : 100rem;
+    background-color: white;
+    box-shadow      : 100px 0 0 0 white;
+}
+
+@keyframes ghost {
+    to {
+        transform: translateX(300px)
+    }
+}
+
+.ghost::before {
+    content         : "";
+    width           : 20px;
+    height          : 20px;
+    position        : absolute;
+    background-color: white;
+    bottom          : 0px;
+    left            : 0;
+    border-radius   : 0 0 100rem 100rem;
+    transform       : translateY(50%);
+    box-shadow      : 20px 0 0 0 white, 40px 0 0 0 white, 60px 0 0 0 white, 80px 0 0 0 white;
+}
+
+
+.ghost-body {
+    width           : 100%;
+    max-width       : 50%;
+    height          : 50px;
+    background-color: white;
+}
+
+.ghost-eye {
+    width           : 20px;
+    height          : 20px;
+    background-color: #191a2e;
+    border-radius   : 50%;
+    box-shadow      : 30px 0 0 0px;
+}
+
+.ghost-mount {
+    width           : 100%;
+    max-width       : 80%;
+    height          : 20px;
+    background-color: #191a2e;
+    margin          : 10px auto 0px;
+    border-radius   : 0 0 10rem 10rem;
+    position        : relative;
+}
+
+.ghost-mount::after {
+    content         : "";
+    width           : 4px;
+    height          : 5px;
+    background-color: white;
+    position        : absolute;
+    top             : 0;
+    left            : 5px;
+}
