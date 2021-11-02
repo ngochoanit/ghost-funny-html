@@ -34,9 +34,15 @@ body {
 }
 
 @keyframes ghost {
-    to {
+
+    50% {
         transform: translateX(300px)
     }
+
+    100% {
+        transform: translateX(0px)
+    }
+
 }
 
 .ghost::before {
